@@ -1,5 +1,16 @@
 def get_user_info():
     while True:
+        user_input = input(
+            "To calculate your daily calorie needs, please enter the following information. (Please enter 'y' to continue / 'q' to quit.): "
+        )
+        if user_input == "q":
+            raise SystemExit("See ya!")
+        elif user_input == "y":
+            break
+        else:
+            print("Please decide. 'y' to continue / 'q' to quit")
+
+    while True:
         try:
             weight = float(input("Please enter your weight in kg: "))
             break
