@@ -1,18 +1,16 @@
 def get_user_info():
     while True:
-        weight = input("Please enter your weight in kg: ")
-        if weight.isdigit():
-            weight = float(weight)
+        try:
+            weight = float(input("Please enter your weight in kg: "))
             break
-        else:
+        except ValueError:
             print("Input of weight is not numeric, please try again!")
 
     while True:
-        height = input("Please enter your height in cm: ")
-        if height.isdigit():
-            height = float(height)
+        try:
+            height = float(input("Please enter your height in cm: "))
             break
-        else:
+        except ValueError:
             print("Input of height is not numeric, please try again!")
 
     while True:
