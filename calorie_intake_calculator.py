@@ -25,11 +25,13 @@ def get_user_info():
             print("Input of height is not numeric, please try again!")
 
     while True:
-        age = input("Please enter your age: ")
-        if age.isdigit():
-            age = int(age)
-            break
-        else:
+        try:
+            age = int(input("Please enter your age (15 - 80): "))
+            if 15 <= age <= 80:
+                break
+            else:
+                print("Please provide an age between 15 and 80.")
+        except ValueError:
             print("Input of age is not numeric, please try again!")
 
     while True:
