@@ -49,7 +49,7 @@ def get_gender():
         if gender == "m" or gender == "f":
             return gender
         else:
-            print("Invalid gender input, please reenter (m = male / f = female).")
+            print("Invalid gender input, please reenter (m = Male / f = Female).")
 
 
 def calculate_bmr(weight, height, age, gender):
