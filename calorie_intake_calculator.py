@@ -72,7 +72,7 @@ def calculate_daily_calories(bmr):
         calories = 0
 
         exercise_level = input(
-            "1. Sedentary\n2. Lightly active\n3. Moderately active\n4. Very active\n5. Extremely active\nSelect your exercise level as above(1 - 5): "
+            "1. Sedentary\n2. Lightly active\n3. Moderately active\n4. Very active\n5. Extremely active\nSelect your exercise level as to continue (1 - 5): "
         )
 
         if exercise_level.isdigit():
