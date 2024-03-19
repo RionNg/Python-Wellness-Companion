@@ -1,7 +1,8 @@
 def get_user_info():
     while True:
         user_input = input(
-            "To calculate your daily calorie needs, please enter the following information. (Enter 'y' to continue / 'q' to quit): ").lower()
+            "To calculate your daily calorie needs, please enter the following information. (Enter 'y' to continue / 'q' to quit): "
+        ).lower()
         if user_input == "q":
             raise SystemExit("See ya!")
         elif user_input == "y":
@@ -63,7 +64,7 @@ def calculate_daily_calories(bmr):
 
     while True:
         exercise_level = input(
-            "1. Sedentary\n2. Lightly active\n3. Moderately active\n4. Very active\n5. Extremely active\nSelect your exercise level (1 - 5): "
+            "1. Sedentary (little or no exercise)\n2. Lightly active (1-2 times a week)\n3. Moderately active (3-4 times a week)\n4. Very active (5-6 times a week)\n5. Extremely active (more than 7 times a week)\nSelect your exercise level (1 - 5): "
         )
 
         try:
