@@ -1,8 +1,7 @@
 def get_user_info():
     while True:
         user_input = input(
-            "To calculate your daily calorie needs, please enter the following information. (Enter 'y' to continue / 'q' to quit): ".lower()
-        )
+            "To calculate your daily calorie needs, please enter the following information. (Enter 'y' to continue / 'q' to quit): ").lower()
         if user_input == "q":
             raise SystemExit("See ya!")
         elif user_input == "y":
