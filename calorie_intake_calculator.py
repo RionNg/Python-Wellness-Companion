@@ -64,7 +64,7 @@ def calculate_daily_calories(bmr):
 
     while True:
         exercise_level = input(
-            "1. Sedentary (little or no exercise)\n2. Lightly active (1-2 times a week)\n3. Moderately active (3-4 times a week)\n4. Very active (5-6 times a week)\n5. Extremely active (more than 7 times a week)\nSelect your exercise level (1 - 5): "
+            "1. Sedentary (little or no exercise)\n2. Light exercise (1-3 days per week)\n3. Moderate exercise (3-5 days per week)\n4. Active exercise (6-7 days per week)\n5. Extremely active exercise (twice per day)\nSelect your exercise level (1 - 5): "
         )
 
         try:
