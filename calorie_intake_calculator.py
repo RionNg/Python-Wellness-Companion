@@ -3,7 +3,7 @@ def get_user_info():
         user_input = input(
             "To calculate your daily calorie needs, please enter 'y' to continue or 'q' to quit.: "
         )
-        if user_input == "q".lower():
+        if user_input.lower() == "q":
             raise SystemExit("See ya!")
         elif user_input == "y":
             break
@@ -57,8 +57,8 @@ def get_user_age(attribute, unit, int_only=False, min_value=None, max_value=None
 
 def get_user_gender():
     while True:
-        gender = input("Please enter your gender (m/f): ").lower()
-        if gender == "m" or gender == "f":
+        gender = input("Please enter your gender (m/f): ")
+        if gender.lower() == "m" or gender == "f":
             return gender
         else:
             print("Invalid gender input, please reenter (m = Male / f = Female).")
