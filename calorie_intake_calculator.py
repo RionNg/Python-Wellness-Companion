@@ -13,7 +13,7 @@ def get_user_info():
     weight = get_numeric_input("weight", "kg")
     height = get_numeric_input("height", "cm")
     age = get_user_age("age", "years", min_value=15, max_value=80)
-    gender = get_gender()
+    gender = get_user_gender()
 
     print("Your personal info as following:")
     print(
@@ -55,7 +55,7 @@ def get_user_age(attribute, unit, int_only=False, min_value=None, max_value=None
             print(e)
 
 
-def get_gender():
+def get_user_gender():
     while True:
         gender = input("Please enter your gender (m/f): ").lower()
         if gender == "m" or gender == "f":
