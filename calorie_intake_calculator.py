@@ -12,7 +12,7 @@ def get_user_info():
 
     weight = get_numeric_input("weight", "kg")
     height = get_numeric_input("height", "cm")
-    age = int(get_numeric_input("age", "years", min_value=15, max_value=80))
+    age = get_user_age("age", "years", min_value=15, max_value=80)
     gender = get_gender()
 
     print("Your personal info as following:")
@@ -23,10 +23,22 @@ def get_user_info():
     return weight, height, age, gender
 
 
-def get_numeric_input(attribute, unit, int_only=False, min_value=None, max_value=None):
+def get_numeric_input(attribute, unit, int_only=False):
     while True:
         try:
             value = float(input(f"Please enter your {attribute} in {unit}: "))
+            if int_only and unit != int(value):
+                raise ValueError
+
+            return value
+        except ValueError as e:
+            print(e)
+
+
+def get_user_age(attribute, unit, int_only=False, min_value=None, max_value=None):
+    while True:
+        try:
+            value = int(input(f"Please enter your {attribute} in {unit} (15 - 80): "))
             if int_only and unit != int(value):
                 raise ValueError
 
