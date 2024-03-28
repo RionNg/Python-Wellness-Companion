@@ -1,10 +1,13 @@
+import sys
+
+
 def get_user_info():
     while True:
         user_input = input(
             "To calculate your daily calorie needs, please enter 'y' to continue or 'q' to quit.: "
         )
         if user_input.lower() == "q":
-            raise SystemExit("See ya!")
+            raise sys.exit("See ya!")
         elif user_input == "y":
             break
         else:
@@ -27,6 +30,8 @@ def get_numeric_input(attribute, unit, int_only=False):
     while True:
         try:
             value = float(input(f"Please enter your {attribute} in {unit}: "))
+            if value <= 0:
+                raise ValueError(f"{attribute.capitalize()} must be greater than 0.")
             if int_only and unit != int(value):
                 raise ValueError
 
@@ -90,12 +95,25 @@ def calculate_daily_calories(bmr):
             print("Please enter a valid input from 1 to 5.")
 
 
+def calculate_weight_loss_calories(calories):
+    mild_weight_loss = calories * 91 / 100
+    weight_loss = calories * 83 / 100
+    extreme_weight_loss = calories * 66 / 100
+
+    return mild_weight_loss, weight_loss, extreme_weight_loss
+
+
 if __name__ == "__main__":
     weight, height, age, gender = get_user_info()
     bmr = calculate_bmr(weight, height, age, gender)
     print(f"BMR: {bmr:.2f}")
-    print(
-        "Basal Metabolic Rate (BMR) is the amount of energy your body needs to maintain basic functions while at rest. Most people's BMR is between 1000 - 2000. This means that they need to take in between 1000 - 2000 calories each day to fuel their basic functions\n"
-    )
+    print()
     calories = calculate_daily_calories(bmr)
-    print(f"*** Your daily calorie needs: {calories:.2f} cal")
+    mild_weight_loss, weight_loss, extreme_weight_loss = calculate_weight_loss_calories(
+        calories
+    )
+    print()
+    print(f"Maintain weight: {calories:.2f} Calories/day")
+    print(f"Mild weight loss: {mild_weight_loss:.2f} Calories/day")
+    print(f"Weight loss: {weight_loss:.2f} Calories/day")
+    print(f"Extreme weight loss: {extreme_weight_loss:.2f} Calories/day")
