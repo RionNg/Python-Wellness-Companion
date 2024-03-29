@@ -28,8 +28,6 @@ def your_goal(calories):
                 fats = int((calories * (macros_ratio[goal][2] / 10)) / 9)
 
                 return protein, carbs, fats
-            else:
-                raise ValueError
         except ValueError:
             print("Please enter a valid input from 1 to 5.")
 
