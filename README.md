@@ -6,4 +6,5 @@ This project aims to provide users with tools and resources to track various asp
 ## Features
 - **BMI Calculator**
 - **Calorie Intake Calculator**
-- **Macro Calculator** (Importing functionalities from `Calorie Intake Calculator`)
+- **Macro Calculator** - Importing functionalities from `Calorie Intake Calculator`
+- **Macro & Calories Tracker** - (Protein(g), Carbohydrates(g), Fats(g), and Calories)/day
